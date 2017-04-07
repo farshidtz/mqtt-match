@@ -1,14 +1,19 @@
-module.exports = function (filter, topic) {
-  const filterArray = filter.split('/')
-  const length = filterArray.length
-  const topicArray = topic.split('/')
+package mqttmatch
 
-  for (var i = 0; i < length; ++i) {
-    var left = filterArray[i]
-    var right = topicArray[i]
-    if (left === '#') return true
-    if (left !== '+' && left !== right) return false
-  }
+import "strings"
 
-  return length === topicArray.length
+// Match checks whether the filter and topic match
+func Match(filter, topic string) bool {
+	filterArray := strings.Split(filter, "/")
+	topicArray := strings.Split(topic, "/")
+	for i := 0; i < len(filterArray); i++ {
+		if filterArray[i] == "#" {
+			return true
+		}
+		if filterArray[i] != "+" && filterArray[i] != topicArray[i] {
+			return false
+		}
+	}
+
+	return len(filterArray) == len(topicArray)
 }
