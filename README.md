@@ -1,14 +1,17 @@
-# mqtt-match [![Build Status](https://travis-ci.org/ralphtheninja/mqtt-match.svg?branch=master)](https://travis-ci.org/ralphtheninja/mqtt-match)
+# mqtt-match [![GoDoc](https://godoc.org/github.com/farshidtz/mqtt-match?status.svg)](https://godoc.org/github.com/farshidtz/mqtt-match) [![Build Status](https://travis-ci.org/farshidtz/mqtt-match.svg?branch=master)](https://travis-ci.org/farshidtz/mqtt-match)
 
 Match mqtt formatted topic strings to strings, e.g. `foo/+` should match `foo/bar`.
 
 ### Usage
 
-```js
-const match = require('mqtt-match')
-console.log(match('foo/+', 'foo/bar'))
+```go
+import (
+    "fmt"
+    mqtttopic "github.org/farshidtz/mqtt-match"
+)
+
+fmt.Println(mqtttopic.Match("foo/+", "foo/bar"))
 // true
 ```
-
-### License
-MIT
+### Copyrights Notice
+This package is a translation of [mqtt-match](https://github.com/ralphtheninja/mqtt-match) for Go.
