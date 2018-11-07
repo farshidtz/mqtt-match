@@ -5,9 +5,11 @@ Match mqtt formatted topic strings to strings, e.g. `foo/+` should match `foo/ba
 ### Usage
 
 ```go
+package main
+
 import (
     "fmt"
-    mqtttopic "github.org/farshidtz/mqtt-match"
+    mqtttopic "github.com/farshidtz/mqtt-match"
 )
 
 fmt.Println(mqtttopic.Match("foo/+", "foo/bar"))
