@@ -12,8 +12,10 @@ import (
     mqtttopic "github.com/farshidtz/mqtt-match"
 )
 
-fmt.Println(mqtttopic.Match("foo/+", "foo/bar"))
-// true
+func main(){
+    fmt.Println(mqtttopic.Match("foo/+", "foo/bar"))
+    // true
+}
 ```
 ### Copyrights Notice
 This package is a translation of [mqtt-match](https://github.com/ralphtheninja/mqtt-match) for Go.
